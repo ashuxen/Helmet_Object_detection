@@ -48,6 +48,11 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         super().__init__(img_size, path_yolov7_weights, path_img_i, device_i=device_i)
 
     def main(self):
+        self.conf_selection = st.selectbox('Confidence Threshold', tuple([0.1, 0.25, 0.5, 0.75, 0.95]))
+        # self.weight_selection = st.selectbox('Confidence Threshold', tuple([helmet_weight,object_weight]))
+        self.response = requests.get(self.path_img_i)
+
+        self.img_screen = Image.open(BytesIO(self.response.content))
         st.title('Custom YoloV7 Object Detector')
         st.write("By: Ashutosh,Raj & Sundar")
         st.subheader(""" Upload an image and run YoloV7 on it.  
@@ -63,11 +68,11 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         #object_weight= "/Users/ashutoshkumar/Desktop/PGP-AIML/AAI-521/Module_7/yolov7/weights/yolov7-tiny.pt"
         self.conf_selection = st.selectbox('Confidence Threshold', tuple([0.1, 0.25, 0.5, 0.75, 0.95]))
         #self.weight_selection = st.selectbox('Confidence Threshold', tuple([helmet_weight,object_weight]))
-        self.response = requests.get(self.path_img_i)
+        #self.response = requests.get(self.path_img_i)
 
-        self.img_screen = Image.open(BytesIO(self.response.content))
+        #self.img_screen = Image.open(BytesIO(self.response.content))
 
-        st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB",
+        #st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB",
                  output_format="auto")
         st.markdown('YoloV7 on streamlit for Object detection.')
         self.im0 = np.array(self.img_screen.convert('RGB'))
