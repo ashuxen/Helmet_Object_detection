@@ -58,7 +58,8 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         st.title('Custom YoloV7 Object Detector')
         st.write("By: Ashutosh,Raj & Sundar")
         st.subheader(""" Upload an image and run YoloV7 on it.  
-        This model was trained to detect hard hat helmet. the model fails in some cases.
+        This model was trained to detect hard hat helmet. The generic model is trained to detect multiple classes.
+        you an check the classes in below selection box.the model fails in some cases.
         (i.e. objects too close up & too far away):\n""")
 
         text_i_list = []
@@ -76,6 +77,18 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
 
         #st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB",
                  #output_format="auto")
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("https://raw.githubusercontent.com/ashuxen/Helmet_Object_detection/main/University_of_San_Diego.jpg");
+                background-attachment: fixed;
+                background-size: cover
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
         st.markdown('YoloV7 on streamlit for Object detection.')
         self.im0 = np.array(self.img_screen.convert('RGB'))
         self.load_image_st()
