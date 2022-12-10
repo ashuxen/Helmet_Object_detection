@@ -48,11 +48,13 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         super().__init__(img_size, path_yolov7_weights, path_img_i, device_i=device_i)
 
     def main(self):
-        self.conf_selection = st.selectbox('Confidence Threshold', tuple([0.1, 0.25, 0.5, 0.75, 0.95]))
+        #self.conf_selection = st.selectbox('Confidence Threshold', tuple([0.1, 0.25, 0.5, 0.75, 0.95]))
         # self.weight_selection = st.selectbox('Confidence Threshold', tuple([helmet_weight,object_weight]))
         self.response = requests.get(self.path_img_i)
 
         self.img_screen = Image.open(BytesIO(self.response.content))
+        st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB",
+                 output_format="auto")
         st.title('Custom YoloV7 Object Detector')
         st.write("By: Ashutosh,Raj & Sundar")
         st.subheader(""" Upload an image and run YoloV7 on it.  
