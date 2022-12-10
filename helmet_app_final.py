@@ -73,7 +73,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         #self.img_screen = Image.open(BytesIO(self.response.content))
 
         #st.image(self.img_screen, caption=self.capt, width=None, use_column_width=None, clamp=False, channels="RGB",
-                 output_format="auto")
+                 #output_format="auto")
         st.markdown('YoloV7 on streamlit for Object detection.')
         self.im0 = np.array(self.img_screen.convert('RGB'))
         self.load_image_st()
