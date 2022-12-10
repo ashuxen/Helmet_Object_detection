@@ -1,5 +1,5 @@
 opencv-contrib-python-headless
-streamlit==0.81.1
+streamlit==1.1.0
 torch
 torchvision
 requests
@@ -21,7 +21,7 @@ tqdm>=4.41.0
 protobuf<4.21.3
 
 # Logging -------------------------------------
-tensorboard>=2.4.1
+#tensorboard>=2.4.1
 # wandb
 
 # Plotting ------------------------------------
