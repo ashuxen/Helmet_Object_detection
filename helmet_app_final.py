@@ -58,8 +58,10 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         st.title('Custom YoloV7 Object Detector')
         st.write("By: Ashutosh,Raj & Sundar")
         st.subheader(""" Upload an image and run YoloV7 on it.  
-        This model was trained to detect hard hat helmet. The generic model is trained to detect multiple classes.
-        you an check the classes in below selection box.the model fails in some cases.
+        This model helmet was trained to detect hard hat helmet. 
+        The generic model is trained to detect multiple classes.
+        you an check the classes in below class selection box.
+        the model fails in some cases.
         (i.e. objects too close up & too far away):\n""")
 
         text_i_list = []
