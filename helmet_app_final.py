@@ -81,7 +81,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
             f"""
             <style>
             .stApp {{
-                background-image: url("https://raw.githubusercontent.com/ashuxen/Helmet_Object_detection/main/usd.jpeg");
+                background-image: url("https://raw.githubusercontent.com/ashuxen/Helmet_Object_detection/main/MSAI.jpeg");
                 background-attachment: fixed;
                 background-size: cover
             }}
