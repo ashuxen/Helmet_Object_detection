@@ -71,7 +71,7 @@ class Streamlit_YOLOV7(SingleInference_YOLOV7):
         st.selectbox('Classes', tuple(text_i_list))
         #helmet_weight= "/Users/ashutoshkumar/Desktop/PGP-AIML/AAI-521/Module_7/yolov7/weights/best.pt"
         #object_weight= "/Users/ashutoshkumar/Desktop/PGP-AIML/AAI-521/Module_7/yolov7/weights/yolov7-tiny.pt"
-        self.conf_selection = st.selectbox('Confidence Threshold', tuple([0.1, 0.25, 0.5, 0.75, 0.95]))
+        self.conf_selection = st.selectbox('Confidence Threshold', tuple([0.1, 0.25, 0.5, 0.65, 0.75, 0.95]))
         #self.weight_selection = st.selectbox('Confidence Threshold', tuple([helmet_weight,object_weight]))
         #self.response = requests.get(self.path_img_i)
 
